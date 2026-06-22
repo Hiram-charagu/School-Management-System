@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Student Dashboard</title>
+  <link rel='stylesheet' href='./dashboard.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>Umma University</h1>
+          <p>Student Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link active' href='./dashboard.html'>Dashboard</a>
+        <a class='nav-link' href='./profile.html'>Profile</a>
+        <a class='nav-link' href='./results.html'>Results</a>
+        <a class='nav-link' href='./attendance.html'>Attendance</a>
+        <a class='nav-link' href='./fees.html'>Fees</a>
+        <a class='nav-link' href='./timetable.html'>Timetable</a>
+        <a class='nav-link' href='./units.html'>Units Registration</a>
+        <a class='nav-link' href='./announcements.html'>Announcements</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar centered-header'>
+        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+        <h2>Student Dashboard</h2>
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3>Registered Units</h3>
+          <p>5 out of 7 units confirmed this semester.</p>
+        </article>
+        <article class='card'>
+          <h3>Fee Balance</h3>
+          <p>KES 42,500 pending before final exams.</p>
+        </article>
+        <article class='card'>
+          <h3>Attendance Rate</h3>
+          <p>91% cumulative attendance in current term.</p>
+        </article>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody id='dataRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='./portal-data.js'></script>
+  <script src='./student-header.js'></script>
+  <script src='./dashboard.js'></script>
+</body>
+</html>
+

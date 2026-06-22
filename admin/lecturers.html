@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Lecturers</title>
+  <link rel='stylesheet' href='./lecturers.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>Umma University</h1>
+          <p>Admin Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link ' href='./dashboard.html'>Dashboard</a>
+          <a class='nav-link ' href='./students.html'>Students</a>
+          <a class='nav-link active' href='./lecturers.html'>Lecturers</a>
+          <a class='nav-link ' href='./classes.html'>Classes</a>
+          <a class='nav-link ' href='./attendance.html'>Attendance</a>
+          <a class='nav-link ' href='./grades.html'>Grades</a>
+          <a class='nav-link ' href='./fees.html'>Fees</a>
+          <a class='nav-link ' href='./reports.html'>Reports</a>
+          <a class='nav-link ' href='./settings.html'>Settings</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'>
+        <h2>Lecturers</h2>
+        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3 id='totalLecturers'>0</h3>
+          <p>Total lecturers</p>
+        </article>
+        <article class='card'>
+          <h3 id='activeLecturers'>0</h3>
+          <p>Active lecturers</p>
+        </article>
+        <article class='card'>
+          <h3 id='facultyCount'>0</h3>
+          <p>Faculties represented</p>
+        </article>
+      </section>
+
+      <section class='form-wrap'>
+        <form id='lecturerForm' class='form-grid'>
+          <input id='fullName' placeholder='Full Name' required />
+          <input id='staffNo' placeholder='Staff No (e.g. BBT001-2026-01)' required />
+          <select id='faculty' required>
+            <option value='Education'>Education</option>
+            <option value='Business and Technology'>Business and Technology</option>
+            <option value='Sharia and Law'>Sharia and Law</option>
+          </select>
+          <input id='email' placeholder='Email' required />
+          <select id='status' required>
+            <option value='Active'>Active</option>
+            <option value='On Leave'>On Leave</option>
+            <option value='Inactive'>Inactive</option>
+          </select>
+          <button class='action-btn' type='submit'>Save Lecturer</button>
+        </form>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Staff No</th>
+              <th>Faculty</th>
+              <th>Email</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id='dataRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='../assets/portal-ui.js'></script>
+  <script src='./lecturers.js'></script>
+</body>
+</html>
+
+
+

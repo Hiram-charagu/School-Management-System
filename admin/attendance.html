@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Attendance</title>
+  <link rel='stylesheet' href='./attendance.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>Umma University</h1>
+          <p>Admin Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link ' href='./dashboard.html'>Dashboard</a>
+          <a class='nav-link ' href='./students.html'>Students</a>
+          <a class='nav-link ' href='./lecturers.html'>Lecturers</a>
+          <a class='nav-link ' href='./classes.html'>Classes</a>
+          <a class='nav-link active' href='./attendance.html'>Attendance</a>
+          <a class='nav-link ' href='./grades.html'>Grades</a>
+          <a class='nav-link ' href='./fees.html'>Fees</a>
+          <a class='nav-link ' href='./reports.html'>Reports</a>
+          <a class='nav-link ' href='./settings.html'>Settings</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'>
+        <h2>Attendance</h2>
+        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3>Overview</h3>
+          <p>This is the Attendance page for the admin role.</p>
+        </article>
+        <article class='card'>
+          <h3>Data Accuracy</h3>
+          <p>Validation checks should block duplicates and incomplete records.</p>
+        </article>
+        <article class='card'>
+          <h3>Performance</h3>
+          <p>Use pagination, indexing, and queued tasks to reduce delays.</p>
+        </article>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody id='dataRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='../assets/portal-ui.js'></script>
+  <script src='./attendance.js'></script>
+</body>
+</html>
+
+
+

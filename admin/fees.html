@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Fees</title>
+  <link rel='stylesheet' href='./fees.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>Umma University</h1>
+          <p>Admin Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link ' href='./dashboard.html'>Dashboard</a>
+          <a class='nav-link ' href='./students.html'>Students</a>
+          <a class='nav-link ' href='./lecturers.html'>Lecturers</a>
+          <a class='nav-link ' href='./classes.html'>Classes</a>
+          <a class='nav-link ' href='./attendance.html'>Attendance</a>
+          <a class='nav-link ' href='./grades.html'>Grades</a>
+          <a class='nav-link active' href='./fees.html'>Fees</a>
+          <a class='nav-link ' href='./reports.html'>Reports</a>
+          <a class='nav-link ' href='./settings.html'>Settings</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'>
+        <h2>Fees</h2>
+        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3 id='totalBilled'>0</h3>
+          <p>Total billed</p>
+        </article>
+        <article class='card'>
+          <h3 id='totalCollected'>0</h3>
+          <p>Total collected</p>
+        </article>
+        <article class='card'>
+          <h3 id='totalOutstanding'>0</h3>
+          <p>Outstanding</p>
+        </article>
+      </section>
+
+      <section class='form-wrap'>
+        <form id='feeForm' class='form-grid'>
+          <input id='studentId' placeholder='Student ID (e.g. STU-001)' required />
+          <input id='semester' placeholder='Semester (e.g. 2026-S1)' required />
+          <input id='amount' type='number' min='0' placeholder='Fee Amount' required />
+          <input id='paidNow' type='number' min='0' placeholder='Paid Now' value='0' required />
+          <button class='action-btn' type='submit'>Save Fee Record</button>
+        </form>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>Invoice</th>
+              <th>Student</th>
+              <th>Semester</th>
+              <th>Amount</th>
+              <th>Paid</th>
+              <th>Balance</th>
+              <th>Status</th>
+              <th>Updated</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id='dataRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='../assets/portal-ui.js'></script>
+  <script src='./fees.js'></script>
+</body>
+</html>
+
+
+

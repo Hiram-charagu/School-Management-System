@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Fees</title>
+  <link rel='stylesheet' href='./fees.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>Umma University</h1>
+          <p>Student Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link' href='./dashboard.html'>Dashboard</a>
+        <a class='nav-link' href='./profile.html'>Profile</a>
+        <a class='nav-link' href='./results.html'>Results</a>
+        <a class='nav-link' href='./attendance.html'>Attendance</a>
+        <a class='nav-link active' href='./fees.html'>Fees</a>
+        <a class='nav-link' href='./timetable.html'>Timetable</a>
+        <a class='nav-link' href='./units.html'>Units Registration</a>
+        <a class='nav-link' href='./announcements.html'>Announcements</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'>
+        <h2>Fee Structure</h2>
+        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3>Total Annual Fee</h3>
+          <p>KES 160,000</p>
+        </article>
+        <article class='card'>
+          <h3>Amount Paid</h3>
+          <p>KES 117,500</p>
+        </article>
+        <article class='card'>
+          <h3>Balance</h3>
+          <p>KES 42,500</p>
+        </article>
+      </section>
+
+      <div class='action-row'>
+        <a class='action-btn' href='./downloads/fee-structure-2026.csv' download='umma-fee-structure-2026.csv'>Download Fee Structure</a>
+        <span class='notice'>Download the official semester fee breakdown as CSV.</span>
+      </div>
+
+      <h3 class='section-title'>Fee Breakdown</h3>
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th>Semester 1 (KES)</th>
+              <th>Semester 2 (KES)</th>
+              <th>Total (KES)</th>
+            </tr>
+          </thead>
+          <tbody id='feeRows'></tbody>
+        </table>
+      </section>
+
+      <h3 class='section-title'>Recent Payments</h3>
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>Receipt No.</th>
+              <th>Date</th>
+              <th>Amount (KES)</th>
+              <th>Mode</th>
+            </tr>
+          </thead>
+          <tbody id='paymentRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='./portal-data.js'></script>
+  <script src='./student-header.js'></script>
+  <script src='./fees.js'></script>
+</body>
+</html>
+

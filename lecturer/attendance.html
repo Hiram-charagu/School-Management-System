@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Attendance</title>
+  <link rel='stylesheet' href='./attendance.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'><div><h1>Umma University</h1><p>Lecturer Portal</p></div></div>
+      <nav class='menu'>
+        <a class='nav-link' href='./dashboard.html'>Dashboard</a>
+        <a class='nav-link' href='./my-classes.html'>My Classes</a>
+        <a class='nav-link active' href='./attendance.html'>Attendance</a>
+        <a class='nav-link' href='./gradebook.html'>Gradebook</a>
+        <a class='nav-link' href='./timetable.html'>Timetable</a>
+        <a class='nav-link' href='./announcements.html'>Announcements</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'><h2>Mark Attendance</h2><img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' /></header>
+      <section class='cards'>
+        <article class='card'><h3 id='totalMarks'>0</h3><p>Total marks recorded</p></article>
+        <article class='card'><h3 id='presentMarks'>0</h3><p>Present</p></article>
+        <article class='card'><h3 id='absentMarks'>0</h3><p>Absent</p></article>
+      </section>
+
+      <section class='form-wrap'>
+        <form id='attendanceForm' class='form-grid'>
+          <select id='unitCode' required></select>
+          <select id='studentRegNo' required></select>
+          <input id='sessionDate' type='date' required />
+          <select id='status' required><option value='Present'>Present</option><option value='Absent'>Absent</option></select>
+          <button class='action-btn' type='submit'>Save Mark</button>
+        </form>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead><tr><th>Date</th><th>Student Reg No</th><th>Unit</th><th>Status</th><th>Lecturer</th></tr></thead>
+          <tbody id='dataRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='../assets/portal-ui.js'></script>
+  <script src='./attendance.js'></script>
+</body>
+</html>

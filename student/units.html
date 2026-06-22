@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Units Registration</title>
+  <link rel='stylesheet' href='./units.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>Umma University</h1>
+          <p>Student Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link' href='./dashboard.html'>Dashboard</a>
+        <a class='nav-link' href='./profile.html'>Profile</a>
+        <a class='nav-link' href='./results.html'>Results</a>
+        <a class='nav-link' href='./attendance.html'>Attendance</a>
+        <a class='nav-link' href='./fees.html'>Fees</a>
+        <a class='nav-link' href='./timetable.html'>Timetable</a>
+        <a class='nav-link active' href='./units.html'>Units Registration</a>
+        <a class='nav-link' href='./announcements.html'>Announcements</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar centered-header'>
+        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+        <h2>Units Registration</h2>
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3 id='registeredUnits'>0</h3>
+          <p>Units selected</p>
+        </article>
+        <article class='card'>
+          <h3 id='totalCredits'>0</h3>
+          <p>Total credits</p>
+        </article>
+        <article class='card'>
+          <h3 id='semesterTag'>Semester</h3>
+          <p id='regWindowTag'>Registration window status</p>
+        </article>
+      </section>
+
+      <form id='unitsForm'>
+        <section class='table-wrap'>
+          <table>
+            <thead>
+              <tr>
+                <th>Select</th>
+                <th>Unit Code</th>
+                <th>Unit Name</th>
+                <th>Credits</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id='unitRows'></tbody>
+          </table>
+        </section>
+
+        <div class='action-row'>
+          <button class='action-btn' type='submit'>Register Selected Units</button>
+          <button id='dropSelectedBtn' class='action-btn' type='button'>Drop Selected Units</button>
+          <span id='unitsNotice' class='notice'>Select your units then submit registration.</span>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <script src='./portal-data.js'></script>
+  <script src='./student-header.js'></script>
+  <script src='./units.js'></script>
+</body>
+</html>
+

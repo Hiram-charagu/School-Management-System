@@ -1,0 +1,108 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Settings</title>
+  <link rel='stylesheet' href='./settings.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>Umma University</h1>
+          <p>Admin Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link ' href='./dashboard.html'>Dashboard</a>
+          <a class='nav-link ' href='./students.html'>Students</a>
+          <a class='nav-link ' href='./lecturers.html'>Lecturers</a>
+          <a class='nav-link ' href='./classes.html'>Classes</a>
+          <a class='nav-link ' href='./attendance.html'>Attendance</a>
+          <a class='nav-link ' href='./grades.html'>Grades</a>
+          <a class='nav-link ' href='./fees.html'>Fees</a>
+          <a class='nav-link ' href='./reports.html'>Reports</a>
+          <a class='nav-link active' href='./settings.html'>Settings</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'>
+        <h2>Settings</h2>
+        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3 id='currentYear'>-</h3>
+          <p>Academic year</p>
+        </article>
+        <article class='card'>
+          <h3 id='currentSemester'>-</h3>
+          <p>Current semester</p>
+        </article>
+        <article class='card'>
+          <h3 id='passMark'>-</h3>
+          <p>Pass mark</p>
+        </article>
+      </section>
+      <section class='cards'>
+        <article class='card'>
+          <h3 id='regOpenDate'>-</h3>
+          <p>Registration opens</p>
+        </article>
+        <article class='card'>
+          <h3 id='regCloseDate'>-</h3>
+          <p>Registration closes</p>
+        </article>
+        <article class='card'>
+          <h3 id='regStatus'>-</h3>
+          <p>Student self-registration</p>
+        </article>
+      </section>
+
+      <section class='form-wrap'>
+        <form id='settingsForm' class='form-grid'>
+          <input id='academicYear' placeholder='Academic Year (e.g. 2026/2027)' required />
+          <select id='semester' required>
+            <option value='Semester 1'>Semester 1</option>
+            <option value='Semester 2'>Semester 2</option>
+            <option value='Trimester'>Trimester</option>
+          </select>
+          <input id='passMarkInput' type='number' min='0' max='100' placeholder='Pass Mark (e.g. 40)' required />
+          <input id='regOpenInput' type='date' required />
+          <input id='regCloseInput' type='date' required />
+          <select id='regEnabledInput' required>
+            <option value='true'>Enable student registration</option>
+            <option value='false'>Disable student registration</option>
+          </select>
+          <input id='registrarEmail' placeholder='Registrar Email' required />
+          <input id='financeEmail' placeholder='Finance Email' required />
+          <button class='action-btn' type='submit'>Save Settings</button>
+        </form>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>Key</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody id='dataRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='../assets/portal-ui.js'></script>
+  <script src='./settings.js'></script>
+</body>
+</html>
+
+
+

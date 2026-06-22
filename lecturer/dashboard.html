@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Lecturer Dashboard</title>
+  <link rel='stylesheet' href='./dashboard.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>Umma University</h1>
+          <p>Lecturer Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link active' href='./dashboard.html'>Dashboard</a>
+          <a class='nav-link ' href='./my-classes.html'>My Classes</a>
+          <a class='nav-link ' href='./attendance.html'>Attendance</a>
+          <a class='nav-link ' href='./gradebook.html'>Gradebook</a>
+          <a class='nav-link ' href='./timetable.html'>Timetable</a>
+          <a class='nav-link ' href='./announcements.html'>Announcements</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'>
+        <h2>Lecturer Dashboard</h2>
+        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3>Overview</h3>
+          <p>This is the Lecturer Dashboard page for the lecturer role.</p>
+        </article>
+        <article class='card'>
+          <h3>Data Accuracy</h3>
+          <p>Validation checks should block duplicates and incomplete records.</p>
+        </article>
+        <article class='card'>
+          <h3>Performance</h3>
+          <p>Use pagination, indexing, and queued tasks to reduce delays.</p>
+        </article>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Status</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody id='dataRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='../assets/portal-ui.js'></script>
+  <script src='./dashboard.js'></script>
+</body>
+</html>
+

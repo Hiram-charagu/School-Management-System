@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Gradebook</title>
+  <link rel='stylesheet' href='./gradebook.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>Umma University</h1>
+          <p>Lecturer Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link ' href='./dashboard.html'>Dashboard</a>
+          <a class='nav-link ' href='./my-classes.html'>My Classes</a>
+          <a class='nav-link ' href='./attendance.html'>Attendance</a>
+          <a class='nav-link active' href='./gradebook.html'>Gradebook</a>
+          <a class='nav-link ' href='./timetable.html'>Timetable</a>
+          <a class='nav-link ' href='./announcements.html'>Announcements</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'>
+        <h2>Gradebook</h2>
+        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3 id='totalEntries'>0</h3>
+          <p>Total grade entries</p>
+        </article>
+        <article class='card'>
+          <h3 id='averageScore'>0</h3>
+          <p>Average score</p>
+        </article>
+        <article class='card'>
+          <h3>Rule</h3>
+          <p>One grade per student per unit (updates allowed).</p>
+        </article>
+      </section>
+
+      <section class='form-wrap'>
+        <form id='gradeForm' class='form-grid'>
+          <select id='unitCode' required></select>
+          <select id='studentId' required></select>
+          <input id='score' type='number' min='0' max='100' placeholder='Score 0-100' required />
+          <button class='action-btn' type='submit'>Save Grade</button>
+        </form>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Unit</th>
+              <th>Score</th>
+              <th>Grade</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody id='dataRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='../assets/portal-ui.js'></script>
+  <script src='./gradebook.js'></script>
+</body>
+</html>
+

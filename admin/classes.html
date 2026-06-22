@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>Umma University | Classes</title>
+  <link rel='stylesheet' href='./classes.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'><div><h1>Umma University</h1><p>Admin Portal</p></div></div>
+      <nav class='menu'>
+        <a class='nav-link' href='./dashboard.html'>Dashboard</a>
+        <a class='nav-link' href='./students.html'>Students</a>
+        <a class='nav-link' href='./lecturers.html'>Lecturers</a>
+        <a class='nav-link active' href='./classes.html'>Classes</a>
+        <a class='nav-link' href='./attendance.html'>Attendance</a>
+        <a class='nav-link' href='./grades.html'>Grades</a>
+        <a class='nav-link' href='./fees.html'>Fees</a>
+        <a class='nav-link' href='./reports.html'>Reports</a>
+        <a class='nav-link' href='./settings.html'>Settings</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'><h2>Manage Offered Units</h2><img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' /></header>
+      <section class='cards'>
+        <article class='card'><h3 id='totalUnits'>0</h3><p>Total units</p></article>
+        <article class='card'><h3 id='openUnits'>0</h3><p>Open for registration</p></article>
+        <article class='card'><h3>Sync</h3><p>Student units page reads from this list.</p></article>
+      </section>
+
+      <section class='form-wrap'>
+        <form id='unitForm' class='form-grid'>
+          <select id='faculty' required>
+            <option value='EDE001'>Education</option>
+            <option value='BBT001'>Business and Technology</option>
+            <option value='SHL003'>Sharia and Law</option>
+          </select>
+          <select id='program' required></select>
+          <input id='customProgram' placeholder='Custom program code (if Other)' style='display:none;' />
+          <input id='code' placeholder='Unit Code (e.g. BSCS2201)' required />
+          <input id='name' placeholder='Unit Name' required />
+          <input id='credits' type='number' min='1' max='6' placeholder='Credits' required />
+          <input id='lecturer' placeholder='Lecturer' required />
+          <input id='day' placeholder='Day (e.g. Monday)' required />
+          <input id='time' placeholder='Time (e.g. 08:00 - 10:00)' required />
+          <input id='venue' placeholder='Venue' required />
+          <select id='offered'><option value='true'>Open</option><option value='false'>Not Offered</option></select>
+          <button class='action-btn' type='submit'>Add Unit</button>
+        </form>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead><tr><th>Faculty</th><th>Program</th><th>Code</th><th>Name</th><th>Credits</th><th>Lecturer</th><th>Day</th><th>Time</th><th>Venue</th><th>Status</th><th>Action</th></tr></thead>
+          <tbody id='unitRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='../assets/portal-ui.js'></script>
+  <script src='./classes.js'></script>
+</body>
+</html>
+
+
