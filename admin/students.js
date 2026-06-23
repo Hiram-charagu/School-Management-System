@@ -38,7 +38,7 @@ const render = () => {
   tbody.innerHTML = students.length
     ? students
         .map(
-          (s) => `<tr><td>${s.id}</td><td>${s.name}</td><td>${s.email || "-"}</td><td>${s.className}</td><td>${s.updated}</td><td><button class='link-btn' data-remove='${s.id}'>Delete</button></td></tr>`
+          (s) => `<tr><td>${s.id}</td><td>${s.name}</td><td>${s.email || "-"}</td><td>${s.className}</td><td>${s.updated}</td><td><button class='link-btn' data-edit='${s.id}'>Edit</button> <button class='link-btn' data-remove='${s.id}'>Delete</button></td></tr>`
         )
         .join("")
     : "<tr><td colspan='6'>No students found.</td></tr>";
@@ -61,14 +61,29 @@ document.getElementById("studentForm")?.addEventListener("submit", (e) => {
   write(students);
   render();
   e.target.reset();
+  document.getElementById("studentId").readOnly = false;
 });
 
 document.getElementById("dataRows")?.addEventListener("click", (e) => {
-  const id = e.target.dataset.remove;
-  if (!id) return;
-  students = students.filter((s) => s.id !== id);
-  write(students);
-  render();
+  const removeId = e.target.dataset.remove;
+  const editId = e.target.dataset.edit;
+  
+  if (removeId) {
+    students = students.filter((s) => s.id !== removeId);
+    write(students);
+    render();
+  }
+  
+  if (editId) {
+    const student = students.find((s) => s.id === editId);
+    if (student) {
+      document.getElementById("studentId").value = student.id;
+      document.getElementById("studentName").value = student.name;
+      document.getElementById("studentEmail").value = student.email || "";
+      document.getElementById("studentClass").value = student.className;
+      document.getElementById("studentId").readOnly = true;
+    }
+  }
 });
 
 document.getElementById("revokeForm")?.addEventListener("submit", (e) => {

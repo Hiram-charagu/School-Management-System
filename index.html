@@ -3,59 +3,204 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Umma University | Portal Home</title>
+  <title>Umma University | Information Management System</title>
   <link rel="stylesheet" href="./index.css" />
 </head>
 <body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="./assets/umma-logo.jpg" alt="Umma University" class="nav-logo" />
+        <span class="nav-title">Umma University</span>
+      </div>
+      <div class="nav-links">
+        <a href="#portals">Portals</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
   <header class="hero">
-    
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <img class="logo-img" src="./assets/umma-logo.jpg" alt="Umma University Logo" />
-      <h1>Umma University</h1>
-      <p>Welcome to the official online portals. Choose your portal to continue.</p>
+      <h1 class="hero-title">Welcome to Umma University</h1>
+      <p class="hero-subtitle">Modern. Accessible. Efficient Academic Management</p>
+      <p class="hero-description">Seamless access to your academic information anytime, anywhere</p>
+      <div class="hero-buttons">
+        <a href="#portals" class="btn btn-primary">Access Portal</a>
+        <a href="#about" class="btn btn-secondary">Learn More</a>
+      </div>
     </div>
-    <div class="hero-images" aria-label="Campus photos">
-      <img class="main-photo" src="./assets/umma-campus-official.jpg" alt="Umma campus official" />
+    <div class="hero-images">
+      <img class="main-photo" src="./assets/umma-campus-official.jpg" alt="Umma campus" />
     </div>
   </header>
 
-  <main class="main-wrap">
-    <section class="portal-grid" aria-label="Portals">
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-card">
+        <div class="stat-number">5,000+</div>
+        <div class="stat-label">Active Students</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">Qualified Lecturers</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">50+</div>
+        <div class="stat-label">Academic Programs</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">99.9%</div>
+        <div class="stat-label">System Uptime</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portals Section -->
+  <main class="main-wrap" id="portals">
+    <div class="section-header">
+      <h2>Choose Your Portal</h2>
+      <p>Select the portal that matches your role to access your dashboard</p>
+    </div>
+
+    <section class="portal-grid">
+      <a class="portal-card student" href="./auth/login.html?portal=student">
+        <div class="portal-icon">🎓</div>
+        <h3>Student Portal</h3>
+        <p>Access results, attendance, timetable, fee statements, and profile management</p>
+        <span class="portal-arrow">→</span>
+      </a>
+
       <a class="portal-card lecturer" href="./auth/login.html?portal=lecturer">
-        <h2>Lecturer/Staff Portal</h2>
-        <p>Class management, attendance, grading, and course tools.</p>
+        <div class="portal-icon">👨‍🏫</div>
+        <h3>Lecturer/Staff Portal</h3>
+        <p>Manage classes, mark attendance, submit grades, and view teaching schedules</p>
+        <span class="portal-arrow">→</span>
       </a>
 
       <a class="portal-card admin" href="./auth/login.html?portal=admin">
-        <h2>Admin Portal</h2>
-        <p>University-wide administration, records, reports, and settings.</p>
+        <div class="portal-icon">⚙️</div>
+        <h3>Admin Portal</h3>
+        <p>University administration, student records, reports, and system settings</p>
+        <span class="portal-arrow">→</span>
       </a>
-
-      <a class="portal-card student" href="./auth/login.html?portal=student">
-        <h2>Student Portal</h2>
-        <p>Results, attendance, timetable, profile, and fee information.</p>
-      </a>
-
     </section>
 
-    <section class="highlights">
-      <article>
-        <h3>Data Accuracy</h3>
-        <p>Reduced duplication and cleaner academic records through validations.</p>
-      </article>
-      <article>
-        <h3>Faster Services</h3>
-        <p>Streamlined attendance, grades, and reporting workflows.</p>
-      </article>
-      <article>
-        <h3>Accessible Records</h3>
-        <p>Role-based access from anywhere for authorized users.</p>
-      </article>
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+      <div class="section-header">
+        <h2>Why Choose Our System?</h2>
+        <p>Powerful features designed for modern education management</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3>Real-Time Updates</h3>
+          <p>Instant access to grades, attendance, and announcements as they're posted</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🔒</div>
+          <h3>Secure & Private</h3>
+          <p>Role-based access control ensures your data remains confidential</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">📱</div>
+          <h3>Mobile Friendly</h3>
+          <p>Access your portal from any device - desktop, tablet, or smartphone</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">⚡</div>
+          <h3>Fast & Reliable</h3>
+          <p>Optimized performance with 99.9% uptime for uninterrupted access</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">📈</div>
+          <h3>Comprehensive Reports</h3>
+          <p>Detailed analytics and reports for informed decision-making</p>
+        </article>
+        <article class="feature-card">
+          <div class="feature-icon">🔔</div>
+          <h3>Smart Notifications</h3>
+          <p>Stay updated with announcements, deadlines, and important alerts</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="about-content">
+        <h2>About Umma University</h2>
+        <p>Umma University is committed to providing quality education through innovative technology and dedicated faculty. Our information management system is designed to streamline academic processes and enhance the learning experience for all stakeholders.</p>
+        <div class="about-highlights">
+          <div class="about-item">✓ Accredited Programs</div>
+          <div class="about-item">✓ Experienced Faculty</div>
+          <div class="about-item">✓ Modern Facilities</div>
+          <div class="about-item">✓ Student-Centered Approach</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="section-header">
+        <h2>Need Help?</h2>
+        <p>Our support team is here to assist you</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">📧</div>
+          <h4>Email Support</h4>
+          <p>ict@umma.edu</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h4>Phone</h4>
+          <p>+254 700 000 000</p>
+        </div>
+        <div class="contact-card">
+          <div class="contact-icon">🕐</div>
+          <h4>Office Hours</h4>
+          <p>Mon-Fri: 8AM - 5PM</p>
+        </div>
+      </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <p>&copy; 2026 Umma University. All rights reserved.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Quick Links</h4>
+        <a href="#portals">Portals</a>
+        <a href="#features">Features</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <a href="./auth/forgot-password.html">Password Reset</a>
+        <a href="#">Academic Calendar</a>
+        <a href="#">Student Handbook</a>
+        <a href="#">FAQs</a>
+      </div>
+      <div class="footer-section">
+        <h4>Contact</h4>
+        <p>Umma University</p>
+        <p>Email: info@umma.edu</p>
+        <p>Phone: +254 700 000 000</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Umma University. All rights reserved.</p>
+    </div>
   </footer>
 
   <script src="./index.js"></script>

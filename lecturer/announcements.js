@@ -11,8 +11,14 @@ const read = (key) => {
   }
 };
 
-const rows = read("umma_announcements");
+const announcements = read("umma_announcements");
+const lecturerAnnouncements = announcements.filter((a) => a.audience === "all" || a.audience === "lecturers");
+
 const tbody = document.getElementById("dataRows");
-tbody.innerHTML = rows.length
-  ? rows.map((r) => `<tr><td>${r.id}</td><td>${r.title}</td><td>${r.audience}</td><td>${r.updated}</td></tr>`).join("")
+tbody.innerHTML = lecturerAnnouncements.length
+  ? lecturerAnnouncements
+      .slice()
+      .reverse()
+      .map((r) => `<tr><td>${r.id}</td><td>${r.title}</td><td><span class='badge'>${r.audience}</span></td><td>${r.updated}</td></tr>`)
+      .join("")
   : "<tr><td colspan='4'>No announcements available.</td></tr>";
