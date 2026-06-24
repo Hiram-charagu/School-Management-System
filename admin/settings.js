@@ -15,8 +15,8 @@ const read = () => {
           regOpenDate: new Date().toISOString().slice(0, 10),
           regCloseDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 21).toISOString().slice(0, 10),
           regEnabled: true,
-          registrarEmail: "registrar@umma.edu",
-          financeEmail: "finance@umma.edu",
+          registrarEmail: "registrar@alsuhaim.edu",
+          financeEmail: "finance@alsuhaim.edu",
           updated: new Date().toISOString().slice(0, 10),
         };
   } catch {
@@ -27,8 +27,8 @@ const read = () => {
       regOpenDate: new Date().toISOString().slice(0, 10),
       regCloseDate: new Date(Date.now() + 1000 * 60 * 60 * 24 * 21).toISOString().slice(0, 10),
       regEnabled: true,
-      registrarEmail: "registrar@umma.edu",
-      financeEmail: "finance@umma.edu",
+      registrarEmail: "registrar@alsuhaim.edu",
+      financeEmail: "finance@alsuhaim.edu",
       updated: new Date().toISOString().slice(0, 10),
     };
   }

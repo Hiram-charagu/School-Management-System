@@ -1,6 +1,6 @@
 :root {
   --primary: #0b4f9c;
-  --secondary: #0f766e;
+  --secondary: #b9a044;
   --bg: #f5f7fb;
   --text: #0f172a;
   --card: #ffffff;
@@ -64,7 +64,7 @@ body {
 }
 
 .nav-link.active {
-  background: #1e40af;
+  background: #003363;
   color: #fff;
 }
 
@@ -165,7 +165,7 @@ body {
 }
 
 .action-btn {
-  background: #1e88e5;
+  background: #003363;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -175,7 +175,7 @@ body {
 }
 
 .action-btn:hover {
-  background: #1565c0;
+  background: #00264a;
 }
 
 .table-wrap {
@@ -211,21 +211,21 @@ th {
 .link-btn {
   background: transparent;
   border: none;
-  color: #1e88e5;
+  color: #003363;
   cursor: pointer;
   padding: 0 .4rem;
   text-decoration: underline;
 }
 
 .link-btn:hover {
-  color: #1565c0;
+  color: #00264a;
 }
 
 .badge {
   padding: .12rem .45rem;
   border-radius: 999px;
-  background: #e0f2fe;
-  color: #075985;
+  background: #f6f0d8;
+  color: #003363;
   font-size: .8rem;
   text-transform: capitalize;
 }

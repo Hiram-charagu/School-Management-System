@@ -1,4 +1,4 @@
-# Umma University Information System - Fixes Applied
+# AL Suhaim University Information System - Fixes Applied
 
 ## Date: 2026
 ## Version: 1.1.0

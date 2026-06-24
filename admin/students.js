@@ -27,8 +27,8 @@ if (localStorage.getItem("umma_user_role") !== "admin") {
 let students = read();
 if (!students.length) {
   students = [
-    { id: "STU-001", name: "Ayan Yusuf", email: "student@umma.edu", className: "BSCS Y2", updated: "2026-03-03" },
-    { id: "STU-002", name: "Halima Noor", email: "student2@umma.edu", className: "BBIT Y1", updated: "2026-03-03" },
+    { id: "STU-001", name: "Ayan Yusuf", email: "student@alsuhaim.edu", className: "BSCS Y2", updated: "2026-03-03" },
+    { id: "STU-002", name: "Halima Noor", email: "student2@alsuhaim.edu", className: "BBIT Y1", updated: "2026-03-03" },
   ];
   write(students);
 }

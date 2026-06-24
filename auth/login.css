@@ -1,4 +1,4 @@
-﻿:root { --primary: #1e88e5; }
+:root { --primary: #003363; }
 * { box-sizing: border-box; }
 body {
   margin: 0;
@@ -6,7 +6,7 @@ body {
   min-height: 100vh;
   display: grid;
   place-items: center;
-  background: linear-gradient(120deg, #070258, #da8e02);
+  background: linear-gradient(120deg, #003363, #b9a044);
 }
 .auth { width: min(450px, 92vw); }
 .panel {
@@ -25,12 +25,52 @@ body {
 }
 
 form { display: grid; gap: 0.55rem; margin-top: 0.8rem; }
-input, button {
+
+.password-field {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-field input {
+  flex: 1;
+  padding-right: 3rem;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0;
+  background: transparent;
+  border: none;
+  padding: 0.65rem 0.75rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #64748b;
+  transition: color 0.2s;
+}
+
+.toggle-password:hover {
+  color: var(--primary);
+  background: transparent;
+}
+
+.eye-icon {
+  display: block;
+}
+
+input, button[type='submit'] {
   padding: 0.65rem;
   border-radius: 8px;
   border: 1px solid #d1d5db;
 }
-button {
+
+button[type='submit'] {
+  padding: 0.65rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+}
+button[type='submit'] {
   border: none;
   background: var(--primary);
   color: #fff;
@@ -38,8 +78,8 @@ button {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-button:hover {
-  background: #1565c0;
+button[type='submit']:hover {
+  background: #00264a;
 }
 .error { color: #b91c1c; min-height: 1rem; }
 .remember-row {
@@ -68,8 +108,8 @@ button:hover {
 .auth-switch a { color: var(--primary); text-decoration: none; font-weight: 600; }
 
 @keyframes brand-colors {
-  0% { color: #1e3a8a; }
+  0% { color: #00264a; }
   33% { color: #047857; }
   66% { color: #ea580c; }
-  100% { color: #1e3a8a; }
+  100% { color: #00264a; }
 }

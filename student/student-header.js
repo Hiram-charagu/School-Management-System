@@ -3,7 +3,7 @@ const renderStudentHeader = () => {
   if (app && !document.querySelector('.portal-footer')) {
     const footer = document.createElement('footer');
     footer.className = 'portal-footer';
-    footer.innerHTML = "<p>&copy; 2026 Umma University. All rights reserved.</p>";
+    footer.innerHTML = "<p>&copy; 2026 AL Suhaim University. All rights reserved.</p>";
     app.insertAdjacentElement('afterend', footer);
   }
 
@@ -29,7 +29,7 @@ const renderStudentHeader = () => {
 
   const img = document.createElement('img');
   img.className = 'topbar-user-photo';
-  img.src = profile.photo || '../assets/umma-logo.jpg';
+  img.src = profile.photo || '../assets/al-suhaim-logo.svg';
   img.alt = 'Student profile photo';
 
   const meta = document.createElement('div');

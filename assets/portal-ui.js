@@ -81,7 +81,7 @@
   if (!document.querySelector(".portal-footer")) {
     const footer = document.createElement("footer");
     footer.className = "portal-footer";
-    footer.innerHTML = "<p>&copy; 2026 Umma University. All rights reserved.</p>";
+    footer.innerHTML = "<p>&copy; 2026 AL Suhaim University. All rights reserved.</p>";
     app.insertAdjacentElement("afterend", footer);
   }
 

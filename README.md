@@ -1,4 +1,4 @@
-# 🎓 Umma University - School Management System
+# 🎓 AL Suhaim University - School Management System
 
 A modern, full-featured **School Information Management System** built with HTML, CSS, and JavaScript. This system provides complete academic administration tools for students, lecturers, and administrators.
 
@@ -271,7 +271,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
-- Umma University for the project requirements
+- AL Suhaim University for the project requirements
 - All contributors and testers
 - Open source community
 

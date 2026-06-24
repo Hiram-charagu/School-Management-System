@@ -53,7 +53,7 @@ document.getElementById("downloadTranscript")?.addEventListener("click", () => {
       </style>
     </head>
     <body>
-      <h1>Umma University</h1>
+      <h1>AL Suhaim University</h1>
       <h2>Student Transcript</h2>
       <p>Student: ${me?.name || "N/A"} (${me?.id || "N/A"})</p>
       <table>

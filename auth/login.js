@@ -101,7 +101,7 @@ form?.addEventListener("submit", (e) => {
         staffNo,
         facultyCode: facultyMatch[0],
         faculty: facultyMatch[1],
-        email: `${staffNo.toLowerCase()}@umma.edu`,
+        email: `${staffNo.toLowerCase()}@alsuhaim.edu`,
         password,
       };
       accounts.push(lecturerAccount);
@@ -138,3 +138,20 @@ form?.addEventListener("submit", (e) => {
   localStorage.setItem("umma_user_name", account.email);
   window.location.href = routes[account.role];
 });
+
+// Password visibility toggle
+const togglePassword = document.querySelector('.toggle-password');
+const passwordInput = document.getElementById('password');
+
+if (togglePassword && passwordInput) {
+  togglePassword.addEventListener('click', () => {
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    
+    // Toggle eye icon
+    const eyeIcon = togglePassword.querySelector('.eye-icon');
+    if (eyeIcon) {
+      eyeIcon.innerHTML = type === 'password' ? '&#128065;' : '&#128584;';
+    }
+  });
+}

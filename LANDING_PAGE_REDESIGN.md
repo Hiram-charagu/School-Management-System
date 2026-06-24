@@ -1,4 +1,4 @@
-# Landing Page Redesign - Umma University
+# Landing Page Redesign - AL Suhaim University
 
 ## 🎨 WHAT WAS CHANGED
 

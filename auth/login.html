@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang='en'>
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-  <title>Umma University | Login</title>
+  <title>AL Suhaim University | Login</title>
   <link rel='stylesheet' href='./login.css' />
 </head>
 <body>
   <main class='auth'>
     <section class='panel'>
       <div class='branding'>
-        <img class='logo-img' src='../assets/umma-logo.jpg' alt='Umma University Logo' />
+        <img class='logo-img' src='../assets/al-suhaim-logo.svg' alt='AL Suhaim University Logo' />
         <h1 id='portalTitle'>Student Portal</h1>
       </div>
 
@@ -19,7 +19,12 @@
         <input id='credential' name='credential' required />
 
         <label for='password'>Password</label>
-        <input id='password' name='password' type='password' required />
+        <div class='password-field'>
+          <input id='password' name='password' type='password' required />
+          <button type='button' class='toggle-password' aria-label='Toggle password visibility'>
+            <span class='eye-icon' aria-hidden='true'>&#128065;</span>
+          </button>
+        </div>
 
         <div class='remember-row'>
           <input type='checkbox' id='remember' name='remember' />

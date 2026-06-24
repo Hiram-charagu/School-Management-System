@@ -59,8 +59,8 @@
 
     if (!read(KEYS.lecturers).length) {
       write(KEYS.lecturers, [
-        { id: "LEC-001", name: "Dr. Ahmed Ali", email: "lecturer@umma.edu", status: "Active", updated: today() },
-        { id: "LEC-002", name: "Ms. Fatuma Said", email: "lecturer2@umma.edu", status: "Active", updated: today() },
+        { id: "LEC-001", name: "Dr. Ahmed Ali", email: "lecturer@alsuhaim.edu", status: "Active", updated: today() },
+        { id: "LEC-002", name: "Ms. Fatuma Said", email: "lecturer2@alsuhaim.edu", status: "Active", updated: today() },
       ]);
     }
 
@@ -73,7 +73,7 @@
             id: u.code || `CLS-${String(i + 1).padStart(3, "0")}`,
             name: u.name || "Unit",
             lecturer: u.lecturer || "Lecturer",
-            lecturerEmail: i % 2 === 0 ? "lecturer@umma.edu" : "lecturer2@umma.edu",
+            lecturerEmail: i % 2 === 0 ? "lecturer@alsuhaim.edu" : "lecturer2@alsuhaim.edu",
             day: u.day || "Monday",
             time: u.time || "08:00 - 10:00",
             venue: u.venue || "Main Hall",
@@ -83,21 +83,21 @@
         );
       } else {
         write(KEYS.classes, [
-          { id: "BSCS2201", name: "Software Engineering", lecturer: "Dr. Ahmed Ali", lecturerEmail: "lecturer@umma.edu", day: "Monday", time: "08:00 - 10:00", venue: "Lab 2", offered: true, updated: today() },
-          { id: "BBIT1102", name: "Database Systems", lecturer: "Ms. Fatuma Said", lecturerEmail: "lecturer2@umma.edu", day: "Tuesday", time: "10:00 - 12:00", venue: "B1-03", offered: true, updated: today() },
+          { id: "BSCS2201", name: "Software Engineering", lecturer: "Dr. Ahmed Ali", lecturerEmail: "lecturer@alsuhaim.edu", day: "Monday", time: "08:00 - 10:00", venue: "Lab 2", offered: true, updated: today() },
+          { id: "BBIT1102", name: "Database Systems", lecturer: "Ms. Fatuma Said", lecturerEmail: "lecturer2@alsuhaim.edu", day: "Tuesday", time: "10:00 - 12:00", venue: "B1-03", offered: true, updated: today() },
         ]);
       }
     }
 
     if (!read(KEYS.grades).length) {
       write(KEYS.grades, [
-        { id: "GRD-001", studentId: "STU-001", studentName: "Ayan Yusuf", unit: "BSCS2201", score: 78, grade: "A", lecturer: "lecturer@umma.edu", updated: today() },
+        { id: "GRD-001", studentId: "STU-001", studentName: "Ayan Yusuf", unit: "BSCS2201", score: 78, grade: "A", lecturer: "lecturer@alsuhaim.edu", updated: today() },
       ]);
     }
 
     if (!read(KEYS.attendance).length) {
       write(KEYS.attendance, [
-        { id: "ATT-001", studentId: "STU-001", unitCode: "BSCS2201", sessionDate: today(), status: "Present", lecturerEmail: "lecturer@umma.edu", staffNo: "EDE001-2026-01", lecturerName: "Dr. Ahmed Ali", updated: today() },
+        { id: "ATT-001", studentId: "STU-001", unitCode: "BSCS2201", sessionDate: today(), status: "Present", lecturerEmail: "lecturer@alsuhaim.edu", staffNo: "EDE001-2026-01", lecturerName: "Dr. Ahmed Ali", updated: today() },
       ]);
     }
 
@@ -110,7 +110,7 @@
 
     if (!read(KEYS.announcements).length) {
       write(KEYS.announcements, [
-        { id: "ANN-001", audience: "all", title: "Semester Open", body: "Classes begin next week.", updated: today(), by: "admin@umma.edu" },
+        { id: "ANN-001", audience: "all", title: "Semester Open", body: "Classes begin next week.", updated: today(), by: "admin@alsuhaim.edu" },
       ]);
     }
   };

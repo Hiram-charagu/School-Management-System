@@ -63,7 +63,7 @@ document.getElementById("announcementForm")?.addEventListener("submit", (e) => {
   const title = document.getElementById("title").value.trim();
   const audience = document.getElementById("audience").value;
   const body = document.getElementById("body").value.trim();
-  const by = localStorage.getItem("umma_user_name") || "admin@umma.edu";
+  const by = localStorage.getItem("umma_user_name") || "admin@alsuhaim.edu";
 
   if (!title || !body) return;
 

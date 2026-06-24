@@ -103,15 +103,6 @@ const statsObserver = new IntersectionObserver((entries) => {
 const statsSection = document.querySelector('.stats-section');
 if (statsSection) statsObserver.observe(statsSection);
 
-// Parallax effect for hero
-window.addEventListener('scroll', () => {
-  const scrolled = window.pageYOffset;
-  const hero = document.querySelector('.hero-images');
-  if (hero) {
-    hero.style.transform = `translateY(${scrolled * 0.3}px)`;
-  }
-});
-
 // Floating animation for portal cards
 const portalCards = document.querySelectorAll('.portal-card');
 portalCards.forEach((card, index) => {

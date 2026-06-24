@@ -12,7 +12,7 @@ const fillForm = (profile) => {
     if (input) input.value = profile[field] || '';
   });
   selectedPhoto = profile.photo || '';
-  photoPreview.src = selectedPhoto || '../assets/umma-logo.jpg';
+  photoPreview.src = selectedPhoto || '../assets/al-suhaim-logo.svg';
 };
 
 const current = window.StudentPortalData.getProfile();

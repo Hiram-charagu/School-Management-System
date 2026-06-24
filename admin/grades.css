@@ -1,5 +1,5 @@
-﻿:root {
-  --primary: #1e88e5;
+:root {
+  --primary: #003363;
   --bg: #f5f7fb;
   --card: #ffffff;
   --text: #1f2937;
@@ -110,15 +110,15 @@ th { background: #f8fafc; }
 
 /* Portal color upgrade */
 :root {
-  --portal-accent: #0b7a75;
-  --portal-accent-2: #1e88e5;
-  --portal-btn: #0f766e;
-  --portal-btn-hover: #0d5f59;
+  --portal-accent: #b9a044;
+  --portal-accent-2: #003363;
+  --portal-btn: #b9a044;
+  --portal-btn-hover: #8f792f;
 }
 
 .cards .card {
-  background: linear-gradient(180deg, #ffffff 0%, #eef7ff 100%);
-  border: 1px solid #dbeafe;
+  background: linear-gradient(180deg, #ffffff 0%, #fbf7e8 100%);
+  border: 1px solid #e5d8a8;
 }
 
 .cards .card h3 {
@@ -139,20 +139,20 @@ button,
 
 button:hover,
 .action-btn:hover {
-  background: linear-gradient(135deg, var(--portal-btn-hover), #1565c0);
+  background: linear-gradient(135deg, var(--portal-btn-hover), #00264a);
   transform: translateY(-1px);
   box-shadow: 0 6px 16px rgba(15, 118, 110, 0.25);
 }
 
 .link-btn {
-  background: #e0f2fe;
-  color: #075985;
+  background: #f6f0d8;
+  color: #003363;
   border-radius: 8px;
   padding: 0.28rem 0.55rem;
   transition: background 0.2s ease, color 0.2s ease;
 }
 
 .link-btn:hover {
-  background: #0ea5e9;
+  background: #003363;
   color: #ffffff;
 }

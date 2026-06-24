@@ -1,4 +1,4 @@
-﻿const form = document.getElementById('resetForm');
+const form = document.getElementById('resetForm');
 const message = document.getElementById('message');
 
 form?.addEventListener('submit', (e) => {
@@ -23,7 +23,7 @@ form?.addEventListener('submit', (e) => {
   const account = accounts.find((a) => a.email?.toLowerCase() === email.toLowerCase());
   
   if (account) {
-    message.textContent = `Password reset instructions have been sent to ${email}. (In production, contact ICT support at ict@umma.edu)`;
+    message.textContent = `Password reset instructions have been sent to ${email}. (In production, contact ICT support at ict@alsuhaim.edu)`;
     message.className = 'success';
   } else {
     message.textContent = 'No account found with this email. Please contact ICT support.';

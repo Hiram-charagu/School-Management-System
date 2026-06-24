@@ -14,7 +14,7 @@ const StudentPortalData = (() => {
     program: 'BScS',
     year: 'Year 1 - Semester 1',
     faculty: 'Faculty of Computing and Informatics',
-    email: localStorage.getItem('umma_user_name') || 'student@umma.ac.ke',
+    email: localStorage.getItem('umma_user_name') || 'student@alsuhaim.edu',
     phone: '+254 700 000 000',
     gender: 'Prefer not to say',
     dob: '',
