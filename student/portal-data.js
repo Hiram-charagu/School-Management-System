@@ -5,6 +5,7 @@ const StudentPortalData = (() => {
     registeredUnits: 'umma_student_registered_units',
     studentTimetable: 'umma_student_timetable',
     lecturerAttendance: 'umma_lecturer_attendance_records',
+    accommodation: 'umma_accommodation_records',
     settings: 'umma_system_settings'
   };
 
@@ -119,6 +120,49 @@ const StudentPortalData = (() => {
 
   const getAttendanceRecords = () => read(KEYS.lecturerAttendance, []);
 
+  const defaultAccommodationRecords = () => [
+    {
+      id: 'ACC-001',
+      studentId: 'STU-001',
+      studentName: 'Ayan Yusuf',
+      hostel: 'Jasmine Hall',
+      room: 'J-204',
+      bed: 'B',
+      package: 'Boarding - Standard',
+      status: 'Approved',
+      checkIn: '2026-03-10',
+      notes: 'Bring student ID during check-in.',
+      updated: '2026-03-03'
+    }
+  ];
+
+  const getAccommodationRecords = () => {
+    const stored = read(KEYS.accommodation, null);
+    if (!Array.isArray(stored) || !stored.length) {
+      const seeded = defaultAccommodationRecords();
+      write(KEYS.accommodation, seeded);
+      return seeded;
+    }
+    return stored;
+  };
+
+  const saveAccommodationRecords = (records) => {
+    write(KEYS.accommodation, records);
+    return records;
+  };
+
+  const getCurrentStudent = () => {
+    const email = (localStorage.getItem('umma_user_name') || '').toLowerCase();
+    const students = read('umma_students', []);
+    return students.find((s) => (s.email || '').toLowerCase() === email) || students[0] || null;
+  };
+
+  const getMyAccommodation = () => {
+    const student = getCurrentStudent();
+    const studentId = student?.id || 'STU-001';
+    return getAccommodationRecords().find((record) => record.studentId === studentId) || null;
+  };
+
   const getRegistrationWindowState = () => {
     const s = getSettings();
     const today = new Date().toISOString().slice(0, 10);
@@ -145,6 +189,10 @@ const StudentPortalData = (() => {
     buildTimetableFromCodes,
     getTimetable,
     getAttendanceRecords,
+    getAccommodationRecords,
+    saveAccommodationRecords,
+    getCurrentStudent,
+    getMyAccommodation,
     getSettings,
     getRegistrationWindowState
   };

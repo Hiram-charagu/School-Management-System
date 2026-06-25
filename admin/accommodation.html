@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>AL Suhaim University | Accommodation</title>
+  <link rel='stylesheet' href='./accommodation.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>AL Suhaim University</h1>
+          <p>Admin Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link' href='./dashboard.html'>Dashboard</a>
+        <a class='nav-link' href='./students.html'>Students</a>
+        <a class='nav-link' href='./lecturers.html'>Lecturers</a>
+        <a class='nav-link' href='./classes.html'>Classes</a>
+        <a class='nav-link' href='./attendance.html'>Attendance</a>
+        <a class='nav-link' href='./grades.html'>Grades</a>
+        <a class='nav-link' href='./fees.html'>Fees</a>
+        <a class='nav-link active' href='./accommodation.html'>Accommodation</a>
+        <a class='nav-link' href='./reports.html'>Reports</a>
+        <a class='nav-link' href='./announcements.html'>Announcements</a>
+        <a class='nav-link' href='./settings.html'>Settings</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'>
+        <h2>Accommodation</h2>
+        <img class='logo-img' src='../assets/al-suhaim-logo.svg' alt='AL Suhaim University Logo' />
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3 id='totalRequests'>0</h3>
+          <p>Total requests</p>
+        </article>
+        <article class='card'>
+          <h3 id='approvedRequests'>0</h3>
+          <p>Approved rooms</p>
+        </article>
+        <article class='card'>
+          <h3 id='pendingRequests'>0</h3>
+          <p>Needs action</p>
+        </article>
+      </section>
+
+      <section class='form-wrap'>
+        <form id='accommodationForm' class='form-grid'>
+          <input id='studentId' placeholder='Student ID (e.g. STU-001)' required />
+          <input id='studentName' placeholder='Student Name' required />
+          <select id='hostel' required>
+            <option value='Jasmine Hall'>Jasmine Hall</option>
+            <option value='Crescent Hall'>Crescent Hall</option>
+            <option value='Palm Residence'>Palm Residence</option>
+          </select>
+          <input id='room' placeholder='Room (e.g. J-204)' required />
+          <input id='bed' placeholder='Bed (e.g. A)' required />
+          <select id='packageType' required>
+            <option value='Boarding - Standard'>Boarding - Standard</option>
+            <option value='Boarding - Premium'>Boarding - Premium</option>
+            <option value='Day Scholar Locker'>Day Scholar Locker</option>
+          </select>
+          <select id='status' required>
+            <option value='Pending'>Pending</option>
+            <option value='Approved'>Approved</option>
+            <option value='Waitlisted'>Waitlisted</option>
+            <option value='Rejected'>Rejected</option>
+            <option value='Cancellation Requested'>Cancellation Requested</option>
+          </select>
+          <input id='checkIn' type='date' required />
+          <textarea id='notes' placeholder='Admin notes'></textarea>
+          <button class='action-btn' type='submit'>Save Accommodation</button>
+        </form>
+      </section>
+
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Name</th>
+              <th>Hostel</th>
+              <th>Room</th>
+              <th>Bed</th>
+              <th>Package</th>
+              <th>Status</th>
+              <th>Check-in</th>
+              <th>Updated</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id='dataRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='../assets/portal-data.js'></script>
+  <script src='../assets/portal-ui.js'></script>
+  <script src='./accommodation.js'></script>
+</body>
+</html>

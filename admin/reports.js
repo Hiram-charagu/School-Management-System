@@ -15,6 +15,7 @@ const stats = [
   { id: "Students", name: String(read("umma_students").length), status: "Total", updated: new Date().toISOString().slice(0, 10) },
   { id: "Lecturers", name: String(read("umma_accounts").filter((a) => a.role === "lecturer").length), status: "Total", updated: new Date().toISOString().slice(0, 10) },
   { id: "Open Units", name: String(read("umma_admin_units_offered").filter((u) => u.offered).length), status: "Active", updated: new Date().toISOString().slice(0, 10) },
+  { id: "Accommodation", name: String(read("umma_accommodation_records").length), status: "Requests", updated: new Date().toISOString().slice(0, 10) },
 ];
 
 const tbody = document.getElementById("dataRows");

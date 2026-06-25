@@ -40,7 +40,7 @@ const allocations = read(ALLOC_KEY).filter((a) => a.staffNo === profile.staffNo)
 let regs = read(REG_KEY);
 
 // Seed lightweight student registrations if empty
-if (!regs.length && students.length && allocations.length) {
+if ((Array.isArray(regs) || !Object.keys(regs).length) && students.length && allocations.length) {
   const regMap = {};
   students.forEach((s, idx) => {
     const studentKey = (s.email || s.id).toLowerCase();

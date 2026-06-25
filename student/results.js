@@ -18,6 +18,8 @@ let me = students.find((s) => (s.email || "").toLowerCase() === userEmail);
 if (!me) me = students[0];
 
 const grades = read("umma_grades").filter((g) => g.studentId === me?.id);
+const unitCode = (record) => record.unitCode || record.unit || "-";
+const unitName = (record) => record.unitName || record.name || unitCode(record);
 
 const tbody = document.getElementById("dataRows");
 tbody.innerHTML = grades.length
@@ -25,8 +27,8 @@ tbody.innerHTML = grades.length
       .map(
         (r) => `
     <tr>
-      <td>${r.unitCode}</td>
-      <td>${r.unitCode}</td>
+      <td>${unitCode(r)}</td>
+      <td>${unitName(r)}</td>
       <td>${r.grade}</td>
       <td><span class='status-chip'>${Number(r.score) >= 40 ? "Passed" : "Fail"}</span></td>
     </tr>`
@@ -37,7 +39,7 @@ tbody.innerHTML = grades.length
 document.getElementById("downloadTranscript")?.addEventListener("click", () => {
   const rowHtml = grades.length
     ? grades
-        .map((g) => `<tr><td>${g.unitCode}</td><td>${g.score}</td><td>${g.grade}</td><td>${g.updated}</td></tr>`)
+        .map((g) => `<tr><td>${unitCode(g)}</td><td>${g.score}</td><td>${g.grade}</td><td>${g.updated}</td></tr>`)
         .join("")
     : "<tr><td colspan='4'>No grades available.</td></tr>";
 

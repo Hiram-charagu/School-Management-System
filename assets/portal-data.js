@@ -7,6 +7,7 @@
     grades: "umma_grades",
     attendance: "umma_lecturer_attendance_records",
     fees: "umma_fees",
+    accommodation: "umma_accommodation_records",
     announcements: "umma_announcements",
     studentRegistrations: "umma_student_registered_units",
     lecturerAllocations: "umma_lecturer_unit_allocations",
@@ -105,6 +106,24 @@
       write(KEYS.fees, [
         { id: "FEE-001", studentId: "STU-001", amount: 45000, paid: 30000, status: "Partially Paid", updated: today() },
         { id: "FEE-002", studentId: "STU-002", amount: 40000, paid: 40000, status: "Paid", updated: today() },
+      ]);
+    }
+
+    if (!read(KEYS.accommodation).length) {
+      write(KEYS.accommodation, [
+        {
+          id: "ACC-001",
+          studentId: "STU-001",
+          studentName: "Ayan Yusuf",
+          hostel: "Jasmine Hall",
+          room: "J-204",
+          bed: "B",
+          package: "Boarding - Standard",
+          status: "Approved",
+          checkIn: today(),
+          notes: "Bring student ID during check-in.",
+          updated: today(),
+        },
       ]);
     }
 

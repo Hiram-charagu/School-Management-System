@@ -9,6 +9,7 @@
   --text-light: #64748b;
   --card: #ffffff;
   --border: #e2e8f0;
+  --hero-bg-image: url("./assets/magnific_a-modern-university-campu_jSEq0QTLD0.png");
 }
 
 * { 
@@ -94,9 +95,10 @@ body {
   padding: 6rem 1rem 2rem;
   background:
     linear-gradient(90deg, rgba(0, 29, 55, 0.72), rgba(15, 23, 42, 0.38)),
-    url(".assets/magnific_a-modern-university-campu_jSEq0QTLD0.png") center / cover no-repeat;
+    var(--hero-bg-image) center / cover no-repeat;
   color: #ffffff;
   overflow: hidden;
+  transition: background-image 0.7s ease;
 }
 
 .hero-overlay {
@@ -111,6 +113,30 @@ body {
   z-index: 2;
   max-width: 800px;
   animation: fadeInUp 0.8s ease-out;
+}
+
+.hero-background-controls {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  z-index: 3;
+  display: flex;
+  gap: 0.55rem;
+  transform: translateX(-50%);
+}
+
+.hero-bg-dot {
+  width: 42px;
+  height: 5px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+  padding: 0;
+}
+
+.hero-bg-dot.active {
+  background: #ffffff;
 }
 
 @keyframes fadeInUp {
@@ -526,7 +552,7 @@ body {
 
   .hero {
     min-height: 70vh;
-    padding: 5rem 1rem 2rem;
+    padding: 5rem 1rem 3.5rem;
   }
 
   .stats-container {

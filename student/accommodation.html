@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8' />
+  <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+  <title>AL Suhaim University | Accommodation</title>
+  <link rel='stylesheet' href='./accommodation.css' />
+</head>
+<body>
+  <div class='app'>
+    <aside class='sidebar'>
+      <div class='brand'>
+        <div>
+          <h1>AL Suhaim University</h1>
+          <p>Student Portal</p>
+        </div>
+      </div>
+      <nav class='menu'>
+        <a class='nav-link' href='./dashboard.html'>Dashboard</a>
+        <a class='nav-link' href='./profile.html'>Profile</a>
+        <a class='nav-link' href='./results.html'>Results</a>
+        <a class='nav-link' href='./attendance.html'>Attendance</a>
+        <a class='nav-link' href='./fees.html'>Fees</a>
+        <a class='nav-link active' href='./accommodation.html'>Accommodation</a>
+        <a class='nav-link' href='./timetable.html'>Timetable</a>
+        <a class='nav-link' href='./units.html'>Units Registration</a>
+        <a class='nav-link' href='./announcements.html'>Announcements</a>
+      </nav>
+      <a class='logout' href='../auth/login.html'>Log out</a>
+    </aside>
+
+    <main class='content'>
+      <header class='topbar'>
+        <h2>Accommodation</h2>
+        <img class='logo-img' src='../assets/al-suhaim-logo.svg' alt='AL Suhaim University Logo' />
+      </header>
+
+      <section class='cards'>
+        <article class='card'>
+          <h3 id='hostelCard'>Not Assigned</h3>
+          <p>Current hostel</p>
+        </article>
+        <article class='card'>
+          <h3 id='roomCard'>Pending</h3>
+          <p>Room and bed</p>
+        </article>
+        <article class='card'>
+          <h3 id='statusCard'>No Request</h3>
+          <p>Application status</p>
+        </article>
+      </section>
+
+      <section class='form-wrap'>
+        <h3 class='section-title'>Request Accommodation</h3>
+        <form id='accommodationForm' class='form-grid'>
+          <label class='form-field'>
+            Hostel Preference
+            <select id='hostelPreference' required>
+              <option value='Jasmine Hall'>Jasmine Hall</option>
+              <option value='Crescent Hall'>Crescent Hall</option>
+              <option value='Palm Residence'>Palm Residence</option>
+            </select>
+          </label>
+          <label class='form-field'>
+            Package
+            <select id='packagePreference' required>
+              <option value='Boarding - Standard'>Boarding - Standard</option>
+              <option value='Boarding - Premium'>Boarding - Premium</option>
+              <option value='Day Scholar Locker'>Day Scholar Locker</option>
+            </select>
+          </label>
+          <label class='form-field'>
+            Preferred Check-in Date
+            <input id='checkInDate' type='date' required />
+          </label>
+          <label class='form-field full'>
+            Notes
+            <textarea id='notes' placeholder='Any medical, accessibility, or roommate notes'></textarea>
+          </label>
+          <button class='action-btn' type='submit'>Submit Request</button>
+          <button id='cancelRequest' class='action-btn secondary' type='button'>Cancel Request</button>
+          <span id='accommodationNotice' class='notice'></span>
+        </form>
+      </section>
+
+      <h3 class='section-title'>My Accommodation Record</h3>
+      <section class='table-wrap'>
+        <table>
+          <thead>
+            <tr>
+              <th>Hostel</th>
+              <th>Room</th>
+              <th>Bed</th>
+              <th>Package</th>
+              <th>Status</th>
+              <th>Check-in</th>
+              <th>Updated</th>
+            </tr>
+          </thead>
+          <tbody id='accommodationRows'></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+
+  <script src='./portal-data.js'></script>
+  <script src='./student-header.js'></script>
+  <script src='./accommodation.js'></script>
+</body>
+</html>
