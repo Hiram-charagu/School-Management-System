@@ -5,6 +5,89 @@ if (portal && ['lecturer', 'admin', 'student'].includes(portal)) {
   localStorage.setItem('umma_selected_portal', portal);
 }
 
+const heroData = {
+  title: 'Welcome to AL Suhaim University',
+  subtitle: 'Modern. Accessible. Efficient Academic Management',
+  description: 'Seamless access to your academic information anytime, anywhere',
+  buttons: [
+    { label: 'Access Portal', href: '#portals', variant: 'primary' },
+    { label: 'Learn More', href: '#about', variant: 'secondary' }
+  ],
+  slides: [
+    {
+      image: './assets/magnific_a-modern-university-campu_jSEq0QTLD0.png',
+      label: 'Modern campus'
+    },
+    {
+      image: './assets/magnific_an-aerial-view-of-the-als_UybreKEwny.png',
+      label: 'Aerial campus view'
+    },
+    {
+      image: './assets/magnific_alsuhaim-university-grand_LUubTFWswO.png',
+      label: 'Grand campus facade'
+    }
+  ]
+};
+
+const hero = document.querySelector('.hero');
+const heroControls = document.querySelector('.hero-background-controls');
+const heroTitle = document.querySelector('.hero-title');
+const heroSubtitle = document.querySelector('.hero-subtitle');
+const heroDescription = document.querySelector('.hero-description');
+const heroButtonsElement = document.querySelector('.hero-buttons');
+let activeHeroSlide = 0;
+let heroSlideTimer = null;
+
+const renderHeroContent = () => {
+  if (heroTitle) heroTitle.textContent = heroData.title;
+  if (heroSubtitle) heroSubtitle.textContent = heroData.subtitle;
+  if (heroDescription) heroDescription.textContent = heroData.description;
+  if (heroButtonsElement) {
+    heroButtonsElement.innerHTML = heroData.buttons
+      .map(button => `
+        <a href="${button.href}" class="btn btn-${button.variant}">${button.label}</a>
+      `)
+      .join('');
+  }
+};
+
+const heroSlides = heroData.slides;
+
+const setHeroSlide = (index) => {
+  if (!hero || !heroSlides.length) return;
+  activeHeroSlide = (index + heroSlides.length) % heroSlides.length;
+  const slide = heroSlides[activeHeroSlide];
+  hero.style.setProperty('--hero-bg-image', `url("${slide.image}")`);
+
+  document.querySelectorAll('.hero-bg-dot').forEach((dot, dotIndex) => {
+    dot.classList.toggle('active', dotIndex === activeHeroSlide);
+    dot.setAttribute('aria-pressed', String(dotIndex === activeHeroSlide));
+  });
+};
+
+const startHeroSlider = () => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  clearInterval(heroSlideTimer);
+  heroSlideTimer = setInterval(() => setHeroSlide(activeHeroSlide + 1), 6500);
+};
+
+if (hero && heroControls) {
+  heroControls.innerHTML = heroSlides
+    .map((slide, index) => `<button class="hero-bg-dot" type="button" aria-label="${slide.label}" aria-pressed="false" data-slide="${index}"></button>`)
+    .join('');
+
+  heroControls.addEventListener('click', (event) => {
+    const slideIndex = Number(event.target.dataset.slide);
+    if (Number.isNaN(slideIndex)) return;
+    setHeroSlide(slideIndex);
+    startHeroSlider();
+  });
+
+  renderHeroContent();
+  setHeroSlide(0);
+  startHeroSlider();
+}
+
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
@@ -109,24 +192,6 @@ portalCards.forEach((card, index) => {
   card.style.animation = `float ${3 + index * 0.5}s ease-in-out infinite`;
   card.style.animationDelay = `${index * 0.2}s`;
 });
-
-// Typing effect for hero subtitle
-const heroSubtitle = document.querySelector('.hero-subtitle');
-if (heroSubtitle) {
-  const text = heroSubtitle.textContent;
-  heroSubtitle.textContent = '';
-  let i = 0;
-  
-  const typeWriter = () => {
-    if (i < text.length) {
-      heroSubtitle.textContent += text.charAt(i);
-      i++;
-      setTimeout(typeWriter, 50);
-    }
-  };
-  
-  setTimeout(typeWriter, 500);
-}
 
 // Particles background effect
 const createParticle = () => {
