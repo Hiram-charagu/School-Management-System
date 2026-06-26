@@ -186,12 +186,7 @@ const statsObserver = new IntersectionObserver((entries) => {
 const statsSection = document.querySelector('.stats-section');
 if (statsSection) statsObserver.observe(statsSection);
 
-// Floating animation for portal cards
 const portalCards = document.querySelectorAll('.portal-card');
-portalCards.forEach((card, index) => {
-  card.style.animation = `float ${3 + index * 0.5}s ease-in-out infinite`;
-  card.style.animationDelay = `${index * 0.2}s`;
-});
 
 // Particles background effect
 const createParticle = () => {

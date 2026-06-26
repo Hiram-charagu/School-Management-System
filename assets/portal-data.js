@@ -132,6 +132,17 @@
         { id: "ANN-001", audience: "all", title: "Semester Open", body: "Classes begin next week.", updated: today(), by: "admin@alsuhaim.edu" },
       ]);
     }
+
+    // Seed default admin account (matches README credentials)
+    const accounts = JSON.parse(localStorage.getItem("umma_accounts") || "[]");
+    if (!accounts.some((a) => a.role === "admin")) {
+      accounts.push({ role: "admin", fullName: "Administrator", email: "admin@umma.edu", password: "admin123" });
+      localStorage.setItem("umma_accounts", JSON.stringify(accounts));
+    }
+    if (!accounts.some((a) => a.role === "student")) {
+      accounts.push({ role: "student", fullName: "Demo Student", email: "student@umma.edu", password: "student123" });
+      localStorage.setItem("umma_accounts", JSON.stringify(accounts));
+    }
   };
 
   const getCurrentUser = () => ({
